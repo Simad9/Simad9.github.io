@@ -19,3 +19,102 @@ section {
 #gallery .row>* {
     padding: 0;
 }
+
+/* Card section */
+.card-box {
+    position: relative;
+    background-color: #0c6efd;
+    border-radius: 10px;
+    height: 500px;
+    /* overflow: hidden; */
+    transform-style: preserve-3d;
+}
+
+.card-box::before {
+    content: "MY";
+    position: absolute;
+    color: #fff;
+    font-style: italic;
+    font-size: 6em;
+    font-weight: bold;
+    top: 30px;
+    /* left: -100px; */
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card-box:hover::before {
+    opacity: 0.2;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
+}
+
+.card-box::after {
+    content: "Project";
+    position: absolute;
+    color: #fff;
+    font-style: italic;
+    font-size: 6em;
+    font-weight: bold;
+    opacity: 0;
+    top: 320px;
+    /* left: 360px; */
+    left: -40%;
+    transform: translate(50%, 0);
+    transition: 0.5s;
+}
+
+.card-box:hover::after {
+    opacity: 0.2;
+    /* left: -205px;
+    transform: translate(50%, 0); */
+}
+
+.project-name {
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    font-size: 2em;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card-box:hover .project-name {
+    top: 20px;
+    opacity: 1;
+    transform: translate3d(0, 0, 30px);
+}
+
+.button-detail {
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    /* Leftnya nanti diganti di @media karena ngubah kalo dibesarin */
+    transform: translate3d(50%, 0, 0);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.card-box:hover .button-detail {
+    opacity: 1;
+    bottom: 25px;
+    transform: translate3d(50%, 0, 60px);
+}
+
+.card-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 50px);
+    /* width: 800px; */
+    transition: 0.5s;
+    ;
+}
+
+.card-box:hover .card-img {
+    transform: translate3d(-50%, -50%, 50px) scale(1.2) rotate(-10deg);
+}
